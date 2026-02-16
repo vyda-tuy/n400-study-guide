@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N-400 Study Guide — Questions &amp; Answers</title>
+    <meta name="description" content="N-400 US Citizenship Interview Study Guide with English and Khmer translations">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=FREE" async
+        onerror="console.log('ResponsiveVoice unavailable, using browser TTS')"></script>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        :root {
+            --bg: #fafafa;
+            --surface: #fff;
+            --border: #e8e8e8;
+            --text: #1a1a1a;
+            --text-secondary: #6b6b6b;
+            --text-tertiary: #999;
+            --accent: #1d4ed8;
+            --accent-light: #eff6ff;
+            --accent-hover: #1e40af;
+            --khmer: #7c3aed;
+            --khmer-light: #f5f3ff;
+            --term-bg: #f8fafc;
+            --term-border: #e2e8f0;
+            --radius: 8px;
+            --shadow: 0 1px 3px rgba(0, 0, 0, .06);
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 2rem 1rem 4rem
+        }
+
+        .container {
+            max-width: 760px;
+            margin: 0 auto
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 3rem 0 2.5rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2.5rem
+        }
+
+        header h1 {
+            font-size: 1.65rem;
+            font-weight: 700;
+            letter-spacing: -.02em;
+            color: var(--text)
+        }
+
+        header p {
+            font-size: .875rem;
+            color: var(--text-secondary);
+            margin-top: .5rem;
+            font-weight: 400
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: .7rem;
+            font-weight: 600;
+            padding: .25rem .65rem;
+            border-radius: 20px;
+            margin-top: .75rem;
+            letter-spacing: .03em;
+            text-transform: uppercase
+        }
+
+        /* Part Section */
+        .part {
+            margin-bottom: 3rem
+        }
+
+        .part-header {
+            display: flex;
+            align-items: center;
+            gap: .65rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: .75rem;
+            border-bottom: 2px solid var(--accent)
+        }
+
+        .part-number {
+            background: var(--accent);
+            color: #fff;
+            font-size: .65rem;
+            font-weight: 700;
+            padding: .3rem .6rem;
+            border-radius: 4px;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            white-space: nowrap
+        }
+
+        .part-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text)
+        }
+
+        .part-title-km {
+            font-size: .85rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-left: .25rem
+        }
+
+        /* Question Card */
+        .question-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.25rem;
+            box-shadow: var(--shadow);
+            transition: box-shadow .2s
+        }
+
+        .question-card:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .08)
+        }
+
+        .q-label {
+            font-size: .65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            margin-bottom: .4rem
+        }
+
+        .q-label-en {
+            color: var(--accent)
+        }
+
+        .q-label-km {
+            color: var(--khmer)
+        }
+
+        .q-row {
+            display: flex;
+            align-items: flex-start;
+            gap: .5rem
+        }
+
+        .q-text {
+            font-size: .9rem;
+            font-weight: 400;
+            flex: 1
+        }
+
+        .q-text-km {
+            font-size: .9rem;
+            color: var(--text-secondary)
+        }
+
+        .q-divider {
+            height: 1px;
+            background: var(--border);
+            margin: .85rem 0
+        }
+
+        /* TTS Button */
+        .tts-btn {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .2s;
+            color: var(--text-secondary);
+            margin-top: -2px
+        }
+
+        .tts-btn:hover {
+            background: var(--accent-light);
+            border-color: var(--accent);
+            color: var(--accent)
+        }
+
+        .tts-btn.speaking {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+            animation: pulse 1.5s infinite
+        }
+
+        .tts-btn svg {
+            width: 16px;
+            height: 16px
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: .6
+            }
+        }
+
+        /* Terms */
+        .terms-block {
+            margin-top: .85rem;
+            padding: .75rem 1rem;
+            background: var(--term-bg);
+            border-left: 3px solid var(--term-border);
+            border-radius: 0 var(--radius) var(--radius) 0
+        }
+
+        .term-item {
+            margin-bottom: .5rem
+        }
+
+        .term-item:last-child {
+            margin-bottom: 0
+        }
+
+        .term-en {
+            font-size: .8rem;
+            color: var(--text)
+        }
+
+        .term-en strong {
+            font-weight: 600
+        }
+
+        .term-km {
+            font-size: .78rem;
+            color: var(--text-secondary)
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem
+        }
+
+        footer p {
+            font-size: .75rem;
+            color: var(--text-tertiary)
+        }
+
+        /* Responsive */
+        @media(max-width:600px) {
+            body {
+                padding: 1rem .75rem 3rem
+            }
+
+            header h1 {
+                font-size: 1.3rem
+            }
+
+            .question-card {
+                padding: 1rem 1.15rem
+            }
+
+            .part-header {
+                flex-wrap: wrap
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>N-400 Citizenship Interview</h1>
+            <p>Study Guide — English &amp; Khmer (ខ្មែរ)</p>
+            <span class="badge">Questions &amp; Key Terms</span>
+        </header>
+        <main id="content"></main>
+        <footer>
+            <p>N-400 Study Guide &bull; Click 🔊 to hear questions read aloud</p>
+        </footer>
+    </div>
+
+    <script>
+        const DATA = [
+            {
+                part: "Part 1", title: "Citizenship Claims, Voting, and Taxes",
+                titleKm: "ផ្នែកទី ១៖ ការអះអាងជាពលរដ្ឋអាមេរិក ការបោះឆ្នោត និងពន្ធ",
+                questions: [
+                    {
+                        en: "Have you ever anywhere in the world at any time claimed to be a US citizen?",
+                        km: "តើអ្នកធ្លាប់បានអះអាងថាខ្លួនជាពលរដ្ឋអាមេរិក នៅកន្លែងណាមួយលើពិភពលោក នៅពេលណាមួយដែរឬទេ?",
+                        terms: [
+                            { en: "Claim to be a US citizen", def: "To say you are a US citizen.", km: "អះអាងថាខ្លួនជាពលរដ្ឋអាមេរិក – និយាយថាខ្លួនជាពលរដ្ឋអាមេរិក។" }
+                        ]
+                    },
+                    {
+                        en: "Have you ever registered to vote or voted in any federal, state, or local election in the United States?",
+                        km: "តើអ្នកធ្លាប់ចុះឈ្មោះបោះឆ្នោត ឬធ្លាប់បោះឆ្នោតក្នុងការបោះឆ្នោតសហព័ន្ធ រដ្ឋ ឬមូលដ្ឋាននៅសហរដ្ឋអាមេរិកដែរឬទេ?",
+                        terms: [
+                            { en: "Register to vote", def: "To sign up to choose a leader.", km: "ចុះឈ្មោះបោះឆ្នោត – ចុះឈ្មោះដើម្បីជ្រើសរើសមេដឹកនាំ។" }
+                        ]
+                    },
+                    {
+                        en: "Do you currently owe any overdue federal, state, or local taxes in the United States?",
+                        km: "តើបច្ចុប្បន្នអ្នកមានបំណុលពន្ធសហព័ន្ធ រដ្ឋ ឬមូលដ្ឋាន ដែលមិនទាន់បានបង់ទេដែរឬទេ?",
+                        terms: [
+                            { en: "Overdue taxes", def: "Didn't pay taxes on time.", km: "ពន្ធដែលមិនបានបង់តាមពេលវេលា – មិនបានបង់ពន្ធទាន់ពេល។" }
+                        ]
+                    },
+                    {
+                        en: "Since you became a lawful permanent resident, have you called yourself a nonresident alien... or decided not to file a tax return because you considered yourself to be a nonresident?",
+                        km: "ចាប់តាំងពីអ្នកបានក្លាយជាអ្នកស្នាក់នៅអចិន្ត្រៃយ៍ តើអ្នកធ្លាប់ហៅខ្លួនឯងថាជាជនបរទេស (nonresident alien) ឬសម្រេចចិត្តមិនដាក់ពន្ធ ព្រោះអ្នកគិតថាខ្លួនជាអ្នកមិនស្នាក់នៅអចិន្ត្រៃយដែរឬទេ?",
+                        terms: [
+                            { en: "Nonresident", def: "Someone who doesn't live in the US.", km: "អ្នកមិនស្នាក់នៅ – អ្នកដែលមិនរស់នៅក្នុងសហរដ្ឋអាមេរិក។" },
+                            { en: "Alien", def: "Someone who is not a US citizen.", km: "ជនបរទេស – អ្នកដែលមិនមែនជាពលរដ្ឋអាមេរិក។" }
+                        ]
+                    }
+                ]
+            },
+            {
+                part: "Part 2", title: "Group Associations and Weapons",
+                titleKm: "ផ្នែកទី ២៖ ក្រួម សមាគម និងអាវុធ",
+                questions: [
+                    {
+                        en: "...the overthrow by force or violence or other unconstitutional means of the government of the United States...?",
+                        km: "...ការប៉ុនប៉ងផ្ដួលរំលំរដ្ឋាភិបាលសហរដ្ឋអាមេរិក ដោយកម្លាំង អំពើហិង្សា ឬវិធីសាស្ត្រដែលផ្ទុយនឹងរដ្ឋធម្មនុញ្ញ...?",
+                        terms: [
+                            { en: "Overthrow", def: "To remove a government by force.", km: "បោះបង់រដ្ឋាភិបាល – ដករំលាយរដ្ឋាភិបាលដោយកម្លាំង។" },
+                            { en: "Unconstitutional means", def: "Methods that go against the Constitution.", km: "វិធីសាស្ត្រផ្ទុយនឹងរដ្ឋធម្មនុញ្ញ – វិធីដែលមិនត្រូវតាមរដ្ឋធម្មនុញ្ញ។" }
+                        ]
+                    },
+                    {
+                        en: "...have you ever provided money, a thing of value, services, or labor... to a group that used a weapon or explosive with intent to harm another person...?",
+                        km: "...តើអ្នកធ្លាប់ផ្តល់ប្រាក់ វត្ថុមានតម្លៃ សេវាកម្ម ឬកម្លាំងពលកម្ម... ដល់ក្រួមដែលប្រើអាវុធ ឬគ្រាប់ផ្ទុះ ដើម្បីបង្កគ្រោះថ្នាក់ដល់មនុស្សដែរឬទេ?",
+                        terms: [
+                            { en: "Weapon", def: "A knife or a gun.", km: "អាវុធ – កាំបឹត ឬកាំភ្លើង។" }
+                        ]
+                    }
+                ]
+            },
+            {
+                part: "Part 3", title: "Persecution and Detention",
+                titleKm: "ផ្នែកទី ៣៖ ការបៀតបៀន និងការឃុំឃាំង",
+                questions: [
+                    {
+                        en: "Have you ever ordered, incited, called for, committed, assisted, helped with, or otherwise participated in any of the following: torture, genocide, killing or trying to kill any person?",
+                        km: "តើអ្នកធ្លាប់បញ្ជា លើកទឹកចិត្ត អំពាវនាវ ធ្វើរួមចំណែក ឬចូលរួមក្នុងសកម្មភាពដូចជា៖ ការបំពានទារុណកម្ម ការប្រល័យពូជសាសន៍ ការសម្លាប់ ឬការប៉ុនប៉ងសម្លាប់មនុស្សដែរឬទេ?",
+                        terms: [
+                            { en: "Torture", def: "To cause great pain to someone.", km: "ទារុណកម្ម – បង្កឱ្យអ្នកណាម្នាក់រងការឈឺចាប់ខ្លាំង។" },
+                            { en: "Genocide", def: "To kill a group of people because of their religion or race.", km: "ប្រល័យពូជសាសន៍ – សម្លាប់ក្រួមមនុស្សមួយដោយសារពូជសាសន៍ ឬសាសនា។" },
+                            { en: "Kill", def: "To cause someone to die.", km: "សម្លាប់ – បណ្ដាលឱ្យមនុស្សម្នាក់ស្លាប់។" }
+                        ]
+                    },
+                    {
+                        en: "Have you ever worked, volunteered, or otherwise served in a place where people were detained... a prison, jail, prison camp, detention facility, or labor camp?",
+                        km: "តើអ្នកធ្លាប់ធ្វើការ ស្ម័គ្រចិត្ត ឬបម្រើការងារនៅកន្លែងដែលមានការឃុំឃាំងមនុស្ស... ដូចជា ពន្ធនាគារ កន្លែងឃុំឃាំង មណ្ឌលឃុំឃាំង ឬជំរុំការងារដែរឬទេ?",
+                        terms: [
+                            { en: "Prison or jail", def: "A place where the police keep people who have been arrested.", km: "ពន្ធនាគារ ឬគុក – កន្លែងដែលប៉ូលីសឃុំអ្នកដែលត្រូវបានចាប់ខ្លួន។" },
+                            { en: "Detention facility", def: "A place where people are forced to stay.", km: "មណ្ឌលឃុំឃាំង – កន្លែងដែលមនុស្សត្រូវបានបង្ខំឱ្យស្នាក់នៅ។" },
+                            { en: "Labor camp", def: "A place where people are forced to work.", km: "ជំរុំការងារ – កន្លែងដែលមនុស្សត្រូវបានបង្ខំឱ្យធ្វើការ។" }
+                        ]
+                    }
+                ]
+            },
+            {
+                part: "Part 4", title: "Crimes and Law Enforcement",
+                titleKm: "ផ្នែកទី ៤៖ ឧក្រិដ្ឋកម្ម និងការអនុវត្តច្បាប់",
+                questions: [
+                    {
+                        en: "Have you ever committed... a crime or offense for which you were not arrested?",
+                        km: "តើអ្នកធ្លាប់ប្រព្រឹត្ត... ឧក្រិដ្ឋកម្ម ឬបទល្មើសណាមួយ តែមិនត្រូវបានចាប់ខ្លួនដែរឬទេ?",
+                        terms: [
+                            { en: "Crime", def: "An action that breaks the law.", km: "ឧក្រិដ្ឋកម្ម – សកម្មភាពដែលលំអៀងច្បាប់។" },
+                            { en: "Offense", def: "A minor crime.", km: "បទល្មើសតូច – ឧក្រិដ្ឋកម្មតូចៗ។" }
+                        ]
+                    },
+                    {
+                        en: "Have you ever been arrested, cited, detained, or confined by any law enforcement officer... for any reason?",
+                        km: "តើអ្នកធ្លាប់ត្រូវបានចាប់ខ្លួន ទទួលពិន័យ ឬត្រូវបានឃុំឃាំងដោយមន្ត្រីអនុវត្តច្បាប់ណាម្នាក់ ដោយហេតុផលណាមួយដែរឬទេ?",
+                        terms: [
+                            { en: "Arrested", def: "Caught by the police.", km: "ត្រូវបានចាប់ខ្លួន – ត្រូវប៉ូលីសចាប់។" },
+                            { en: "Cited", def: "Given a ticket by the police.", km: "ទទួលពិន័យ – បានទទួលសំបុត្រពិន័យពីប៉ូលីស។" },
+                            { en: "Confined", def: "Jailed by the police.", km: "ត្រូវបានឃុំឃាំង – ត្រូវប៉ូលីសដាក់គុក។" }
+                        ]
+                    }
+                ]
+            },
+            {
+                part: "Part 5", title: "Moral Character and Immigration Benefits",
+                titleKm: "ផ្នែកទី ៥៖ សីលធម៍ និងអត្ថប្រយោជន៍អន្តោប្រវេសន៍",
+                questions: [
+                    {
+                        en: "Have you ever engaged in prostitution, attempted to procure or import prostitutes... or received any proceeds or money from prostitution?",
+                        km: "តើអ្នកធ្លាប់ពាក់ព័ន្ធនឹងអាជីពពេស្យាចារ ឬព្យាយាមរក ឬនាំចូលក្រួមពេស្យាចារ... ឬទទួលប្រាក់ចំណូលពីអាជីពនេះដែរឬទេ?",
+                        terms: [
+                            { en: "Prostitution", def: "Having sex for money.", km: "អាជីពពេស្យាចារ – មានទំនាក់ទំនងផ្លូវភេទដោយបង់ប្រាក់។" }
+                        ]
+                    },
+                    {
+                        en: "Have you ever manufactured, cultivated, produced, distributed, dispensed, sold or smuggled any controlled substances, illegal drugs, narcotics, or drug paraphernalia?",
+                        km: "តើអ្នកធ្លាប់ផលិត ដាំដុះ ផលិត ចែកចាយ លក់ ឬលួចនាំចូល សារធាតុគ្រឿងញៀន ឬឧបករណ៍ប្រើគ្រឿងញៀនណាមួយដែរឬទេ?",
+                        terms: [
+                            { en: "Smuggle", def: "To bring something illegally into the country.", km: "លួចនាំចូល – នាំអ្វីមួយចូលប្រទេសដោយខុសច្បាប់។" },
+                            { en: "Narcotics", def: "Illegal drugs like heroin or cocaine.", km: "គ្រឿងញៀន – ឱសថខុសច្បាប់ដូចជា ហេរ៉ូអ៊ីន ឬកូកាអ៊ីន។" },
+                            { en: "Drug paraphernalia", def: "Equipment to make or use illegal drugs.", km: "ឧបករណ៍គ្រឿងញៀន – ឧបករណ៍ប្រើ ឬផលិតគ្រឿងញៀនខុសច្បាប់។" }
+                        ]
+                    },
+                    {
+                        en: "Have you ever married someone in order to obtain an immigration benefit?",
+                        km: "តើអ្នកធ្លាប់រៀបការជាមួយនរណាម្នាក់ ដើម្បីទទួលអត្ថប្រយោជន៍អន្តោប្រវេសន៍ដែរឬទេ?",
+                        terms: [
+                            { en: "Obtain immigration benefit", def: "To gain things like a green card.", km: "ទទួលអត្ថប្រយោជន៍អន្តោប្រវេសន៍ – ទទួលបានកាតបៃតង។" }
+                        ]
+                    },
+                    {
+                        en: "Have you ever gambled illegally or received income from illegal gambling?",
+                        km: "តើអ្នកធ្លាប់លេងល្បែងស៊ីសងខុសច្បាប់ ឬទទួលប្រាក់ចំណូលពីការស៊ីសងខុសច្បាប់ដែរឬទេ?",
+                        terms: [
+                            { en: "Illegal gambling", def: "To play a game for money that is against the law.", km: "ស៊ីសងខុសច្បាប់ – លេងល្បែងឈ្នះប្រាក់ដែលខុសច្បាប់។" }
+                        ]
+                    },
+                    {
+                        en: "Have you ever failed to support your dependents or to pay alimony?",
+                        km: "តើអ្នកធ្លាប់មិនជួយផ្គត់ផ្គង់អ្នកដែលអាស្រ័យលើអ្នក ឬមិនបង់ប្រាក់អាឡីម៉ូនីដែរឬទេ?",
+                        terms: [
+                            { en: "Support your dependent", def: "To pay child support.", km: "គាំទ្រអ្នកអាស្រ័យ – បង់ប្រាក់ចិញ្ចឹមកូនក្រេាយលែងលះ។" },
+                            { en: "Pay alimony", def: "To give money to an ex-spouse after a divorce.", km: "បង់អាឡីម៉ូនី – ផ្តល់ប្រាក់ឱ្យអតីតប្តី ឬអតីតប្រពន្ធបន្ទាប់ពីលែងលះ។" }
+                        ]
+                    },
+                    {
+                        en: "Have you ever made any misrepresentation to obtain any public benefit in the United States?",
+                        km: "តើអ្នកធ្លាប់បោកប្រាស់ ឬផ្តល់ព័ត៌មានមិនពិត ដើម្បីទទួលអត្ថប្រយោជន៍សាធារណៈនៅសហរដ្ឋអាមេរិកដែរឬទេ?",
+                        terms: [
+                            { en: "Misrepresentation", def: "Lying about who you are or something you did.", km: "ការបោកប្រាស់ – កុហកអំពីអត្តសញ្ញាណ ឬអំពីអ្វីដែលអ្នកបានធ្វើ។" },
+                            { en: "Public benefit", def: "Money from the government such as food stamps.", km: "អត្ថប្រយោជន៍សាធារណៈ – ជំនួយ ឬប្រាក់ពីរដ្ឋាភិបាល ដូចជា សំបុត្រអាហារ។" }
+                        ]
+                    }
+                ]
+            },
+            {
+                part: "Part 6", title: "Honesty and Deportation",
+                titleKm: "ផ្នែកទី ៦៖ ការស្មោះត្រង់ និងការបណ្តេញចេញពីប្រទេស",
+                questions: [
+                    {
+                        en: "...have you ever given any US government officials any information or documentation that was false, fraudulent, or misleading?",
+                        km: "...តើអ្នកធ្លាប់ផ្តល់ព័ត៌មាន ឬឯកសារដែលមិនពិត ក្លែងបន្លំ ឬបញ្ឆោត ដល់មន្ត្រីរដ្ឋាភិបាលសហរដ្ឋអាមេរិកដែរឬទេ?",
+                        terms: [
+                            { en: "Fraudulent", def: "To claim something that is not true.", km: "ក្លែងបន្លំ – អះអាងអ្វីមួយដែលមិនពិត។" }
+                        ]
+                    },
+                    {
+                        en: "Have you ever lied to any US government officials to gain entry... or to gain immigration benefits while in the United States?",
+                        km: "តើអ្នកធ្លាប់កុហកមន្ត្រីរដ្ឋាភិបាលសហរដ្ឋអាមេរិក ដើម្បីចូលប្រទេស... ឬដើម្បីទទួលអត្ថប្រយោជន៍អន្តោប្រវេសន៍ ខណៈដែលស្ថិតនៅក្នុងសហរដ្ឋអាមេរិកដែរឬទេ?",
+                        terms: [
+                            { en: "Lie", def: "To say things that are not true.", km: "កុហក – និយាយអ្វីដែលមិនពិត។" }
+                        ]
+                    },
+                    {
+                        en: "Have you ever been removed or deported from the United States?",
+                        km: "តើអ្នកធ្លាប់ត្រូវបានបណ្តេញចេញ ឬបញ្ជូនចេញពីសហរដ្ឋអាមេរិកដែរឬទេ?",
+                        terms: [
+                            { en: "Deported", def: "Forced to leave the US.", km: "បណ្តេញចេញ – ត្រូវបានបង្ខំឱ្យចាកចេញពីសហរដ្ឋអាមេរិក។" }
+                        ]
+                    }
+                ]
+            },
+            {
+                part: "Part 7", title: "Allegiance and the Oath",
+                titleKm: "ផ្នែកទី ៧៖ ការស្បថស្មោះត្រង់ និងការប្តេជ្ញាចិត្តចំពោះសហរដ្ឋអាមេរិក",
+                questions: [
+                    {
+                        en: "Do you support the Constitution and form of government of the United States?",
+                        km: "តើអ្នកគាំទ្ររដ្ឋធម្មនុញ្ញ និងរបបរដ្ឋាភិបាលរបស់សហរដ្ឋអាមេរិកដែរឬទេ?",
+                        terms: [
+                            { en: "Constitution", def: "The supreme law of the land.", km: "រដ្ឋធម្មនុញ្ញ – ច្បាប់ខ្ពស់បំផុតរបស់ប្រទេស។" },
+                            { en: "Republic", def: "The form of government in the US.", km: "សាធារណរដ្ឋ – របបរដ្ឋាភិបាលរបស់សហរដ្ឋអាមេរិក។" }
+                        ]
+                    },
+                    {
+                        en: "Do you understand the full oath of allegiance to the United States?",
+                        km: "តើអ្នកយល់អំពីពាក្យស្បថស្មោះត្រង់ទាំងស្រុងចំពោះសហរដ្ឋអាមេរិកដែរឬទេ?",
+                        terms: [
+                            { en: "Oath of allegiance", def: "A promise to be loyal to the United States.", km: "ពាក្យស្បថស្មោះត្រង់ – ការប្តេជ្ញាដើម្បីស្មោះត្រង់ចំពោះសហរដ្ឋអាមេរិក។" }
+                        ]
+                    },
+                    {
+                        en: "If the law requires it, are you willing to bear arms on behalf of the United States?",
+                        km: "បើច្បាប់តម្រូវ តើអ្នកយល់ព្រមកាន់អាវុធ ដើម្បីការពារសហរដ្ឋអាមេរិកដែរឬទេ?",
+                        terms: [
+                            { en: "Bear arms", def: "To use a gun to defend the United States during a war.", km: "កាន់អាវុធ – ប្រើកាំភ្លើងដើម្បីការពារប្រទេសក្នុងសង្គ្រាម។" }
+                        ]
+                    },
+                    {
+                        en: "If the law requires it, are you willing to perform non-combatant services in the US armed forces?",
+                        km: "បើច្បាប់តម្រូវ តើអ្នកយល់ព្រមបម្រើការងារដែលមិនពាក់ព័ន្ធនឹងការប្រយុទ្ធ ក្នុងកងទ័ពសហរដ្ឋអាមេរិកដែរឬទេ?",
+                        terms: [
+                            { en: "Perform non-combatant services", def: "Do work that is not fighting, such as nursing, cooking, or translation.", km: "បម្រើការងារមិនប្រយុទ្ធ – ធ្វើការងារដូចជា ថែទាំអ្នកជំងឺ ចម្អិនអាហារ ឬបកប្រែ។" }
+                        ]
+                    },
+                    {
+                        en: "If the law requires it, are you willing to perform work of national importance under civilian direction?",
+                        km: "បើច្បាប់តម្រូវ តើអ្នកយល់ព្រមធ្វើការងារសំខាន់ជូនជាតិក្រោមការដឹកនាំរបស់ជនស៊ីវិលដែរឬទេ?",
+                        terms: [
+                            { en: "Civilian", def: "Anyone who is not in the military.", km: "ជនស៊ីវិល – អ្នកដែលមិនមែនជាទាហាន។" },
+                            { en: "Work of national importance", def: "Non-military work during a national crisis, such as helping the Red Cross after an earthquake.", km: "ការងារសំខាន់ជាតិ – ការងារមិនមែនយោធា ក្នុងពេលជាតិមានវិបត្តិ ដូចជាជួយកាកបាទក្រហមក្រោយការរញ្ជួយដី។" }
+                        ]
+                    }
+                ]
+            },
+            {
+                part: "Part 8", title: "Political Associations and Advocacy",
+                titleKm: "ផ្នែកទី ៨៖ សមាគមនយោបាយ និងការតស៊ូមតិ",
+                questions: [
+                    {
+                        en: "Have you EVER been a member of, involved in, or in any way associated with any Communist or totalitarian party anywhere in the world?",
+                        km: "តើអ្នកធ្លាប់ជាសមាជិក ចូលរួម ឬមានទំនាក់ទំនងជាមួយគណបក្សកុម្មួយនីស្ត ឬគណបក្សផ្តាច់ការ នៅកន្លែងណាមួយលើពិភពលោកដែរឬទេ?",
+                        terms: [
+                            { en: "Communist party", def: "A political group that supports government control over property and economy.", km: "គណបក្សកុម្មួយនីស្ត – ក្រួមនយោបាយដែលគាំទ្រការគ្រប់គ្រងរបស់រដ្ឋាភិបាលលើទ្រព្យសម្បត្តិ និងសេដ្ឋកិច្ច។" },
+                            { en: "Totalitarian", def: "A government that controls everything and does not allow opposition.", km: "ផ្តាច់ការ – រដ្ឋាភិបាលដែលគ្រប់គ្រងគ្រប់យ៉ាង ហើយមិនអនុញ្ញាតឱ្យមានការប្រឆាំង។" }
+                        ]
+                    },
+                    {
+                        en: "Have you EVER advocated any of the following, or been associated with any group that advocated: opposition to all organized government, world communism, a totalitarian dictatorship, the overthrow of the US Government, or sabotage?",
+                        km: "តើអ្នកធ្លាប់តស៊ូមតិ ឬមានទំនាក់ទំនងជាមួយក្រួមដែលតស៊ូមតិចំពោះ៖ ការប្រឆាំងរដ្ឋាភិបាល កុម្មួយនីសពិភពលោក របបផ្តាច់ការ ការផ្ដួលរំលំរដ្ឋាភិបាលអាមេរិក ឬការបំផ្លិចបំផ្លាញដែរឬទេ?",
+                        terms: [
+                            { en: "Advocate", def: "To publicly support or recommend something.", km: "តស៊ូមតិ – គាំទ្រ ឬផ្សព្វផ្សាយអ្វីមួយជាសាធារណៈ។" },
+                            { en: "Sabotage", def: "To deliberately destroy or damage something.", km: "ការបំផ្លិចបំផ្លាញ – ការបំផ្លាញអ្វីមួយដោយចេតនា។" }
+                        ]
+                    }
+                ]
+            },
+            {
+                part: "Part 9", title: "Weapons, Violence, and Threats",
+                titleKm: "ផ្នែកទី ៩៖ អាវុធ អំពើហិង្សា និងការគំរាមកំហែង",
+                questions: [
+                    {
+                        en: "Have you EVER used a weapon or explosive with intent to harm another person or cause damage to property?",
+                        km: "តើអ្នកធ្លាប់ប្រើអាវុធ ឬគ្រាប់ផ្ទុះ ដោយមានចេតនាបង្កគ្រោះថ្នាក់ដល់មនុស្ស ឬបំផ្លាញទ្រព្យសម្បត្តិដែរឬទេ?",
+                        terms: [
+                            { en: "Explosive", def: "A bomb or device that blows up.", km: "គ្រាប់ផ្ទុះ – គ្រាប់បែក ឬឧបករណ៍ផ្ទុះ។" }
+                        ]
+                    },
+                    {
+                        en: "Have you EVER engaged in kidnapping, assassination, or hijacking or sabotage of an airplane, ship, vehicle, or other mode of transportation?",
+                        km: "តើអ្នកធ្លាប់ចូលរួមក្នុងការចាប់ជំរិត ការសម្លាប់ ឬការប្លន់យន្តហោះ នាវា យានយន្ត ឬមធ្យោបាយដឹកជញ្ជូនផ្សេងទៀតដែរឬទេ?",
+                        terms: [
+                            { en: "Kidnapping", def: "Taking someone away by force.", km: "ការចាប់ជំរិត – ចាប់យកមនុស្សម្នាក់ដោយកម្លាំង។" },
+                            { en: "Assassination", def: "The murder of an important person.", km: "ការសម្លាប់ – ការសម្លាប់មនុស្សសំខាន់។" },
+                            { en: "Hijacking", def: "Taking control of a vehicle by force.", km: "ការប្លន់ – ការកាន់កាប់យានយន្ត អាវ យន្តហោះ ដោយកម្លាំង។" }
+                        ]
+                    },
+                    {
+                        en: "Have you EVER threatened, conspired, or incited others to commit any violent acts?",
+                        km: "តើអ្នកធ្លាប់គំរាមកំហែង ប្ឹនប្ង សមគំនិត រៀបចំ ធ្វើផែនការ តស៊ូមតិ ឬជំរុញអ្នកដទៃ ឱ្យប្រព្រឹត្តអំពើហិង្សា ដែរឬទេ?",
+                        terms: [
+                            { en: "Conspire", def: "To plan secretly with others to do something illegal.", km: "សមគំនិត – រៀបចំផែនការសម្ងាត់ជាមួយអ្នកដទៃ ដើម្បីធ្វើអ្វីខុសច្បាប់។" },
+                            { en: "Incite", def: "To encourage others to do something violent.", km: "ជំរុញ – លើកទឹកចិត្តអ្នកដទៃឱ្យប្រព្រឹត្តអំពើហិង្សា ឬខុសច្បាប់។" }
+                        ]
+                    }
+                ]
+            },
+            {
+                part: "Part 10", title: "Human Rights Abuses",
+                titleKm: "ផ្នែកទី ១០៖ ការរំលោភសិទ្ធិមនុស្ស",
+                questions: [
+                    { en: "Have you EVER intentionally and severely injured or tried to injure any person?", km: "តើអ្នកធ្លាប់ធ្វើឱ្យរបួសធ្ងន់ ឬប៉ុនប៉ងធ្វើឱ្យរបួសមនុស្សណាម្នាក់ដោយចេតនាដែរឬទេ?", terms: [{ en: "Intentionally", def: "On purpose, deliberately.", km: "ដោយចេតនា – ធ្វើដោយដឹងខ្លួន។" }] },
+                    { en: "Have you EVER engaged in any kind of sexual contact with any person who did not consent or was unable to consent?", km: "តើអ្នកធ្លាប់មានទំនាក់ទំនងផ្លូវភេទ ជាមួយមនុស្សដែលមិនយល់ព្រមដែរឬទេ?", terms: [{ en: "Consent", def: "To agree or give permission.", km: "យល់ព្រម – ការព្រមព្រៀង។" }] },
+                    { en: "Have you EVER prevented someone from practicing his or her religion?", km: "តើអ្នកធ្លាប់រារាំងមនុស្សណាម្នាក់មិនឱ្យប្រតិបត្តិសាសនារបស់គេដែរឬទេ?", terms: [{ en: "Practice religion", def: "To follow or observe one\'s faith.", km: "ប្រតិបត្តិសាសនា – អនុវត្តសាសនារបស់ខ្លួន។" }] },
+                    { en: "Have you EVER caused harm or suffering to any person because of their race, religion, national origin, social group, or political opinion?", km: "តើអ្នកធ្លាប់បង្កគ្រោះត្នាក់ដល់មនុស្ស ព្រោះតែពូជសាសន៍ សាសនា ជាតិកំណើត ក្រួមសង្គម ឬជំហរនយោបាយដែរឬទេ?", terms: [{ en: "National origin", def: "The country where a person was born.", km: "ជាតិកំណើត – ប្រទេសដែលមនុស្សកើតឡើង។" }] }
+                ]
+            },
+            {
+                part: "Part 11", title: "Military, Police, and Armed Groups",
+                titleKm: "ផ្នែកទី ១១៖ កងទ័ព ប៉ូលីស និងក្រួមប្រដាប់អាវុធ",
+                questions: [
+                    { en: "Have you EVER served in, been a member of, assisted, or participated in any military or police unit?", km: "តើអ្នកធ្លាប់បម្រើ ជាសមាជិក ជួយ ឬចូលរួមក្នុងអង្គភាពកងទ័ព ឬប៉ូលីសណាដែរឬទេ?", terms: [{ en: "Military unit", def: "A group of soldiers in the armed forces.", km: "អង្គភាពកងទ័ព – ក្រួមទាហានក្នុងកងកំលាំង។" }] },
+                    { en: "Have you EVER served in any armed group such as a paramilitary unit, self-defense unit, vigilante unit, rebel group, or guerrilla group?", km: "តើអ្នកធ្លាប់បម្រើក្នុងក្រួមប្រដាប់អាវុធណាដែរឬទេ?", terms: [{ en: "Paramilitary", def: "A group that acts like a military but is not official.", km: "កងអាវុធរដ្ឋ – ក្រួមដែលធ្វើដូចជាកងទ័ព។" }, { en: "Guerrilla group", def: "A small group of fighters who use surprise attacks.", km: "ក្រួមប្រយុទ្ធពីក្រោយ – ក្រួមអ្នកប្រយុទ្ធតូច។" }] },
+                    { en: "Have you EVER sold, provided, or transported weapons which you knew would be used against another person?", km: "តើអ្នកធ្លាប់លក់ ផ្តល់ ដឹកជញ្ជឺនអាវុធដែរឬទេ?", terms: [] },
+                    { en: "Have you EVER received any weapons training, paramilitary training, or other military-type training?", km: "តើអ្នកធ្លាប់ទទួលការបណ្តុះបណ្តាលអាវុធ ឬប្រភេទយោធាដែរឬទេ?", terms: [{ en: "Weapons training", def: "Learning how to use guns or other weapons.", km: "ការបណ្តុះបណ្តាលអាវុធ – រៀនពីរបៀបប្រើអាវុធ។" }] }
+                ]
+            },
+            {
+                part: "Part 12", title: "Additional Criminal and Immigration Questions",
+                titleKm: "ផ្នែកទី ១២៖ សំណួរបន្ថែម",
+                questions: [
+                    { en: "If you received a suspended sentence, were placed on probation, or were paroled, have you completed it?", km: "បើអ្នកទទួលការពន្យារទោស តើអ្នកបានបញ្ចប់ហើយឬនៅ?", terms: [{ en: "Suspended sentence", def: "A punishment that is delayed if you follow rules.", km: "ការពន្យារទោស – ការផ្អាកទោស។" }, { en: "Probation", def: "A period of supervision instead of jail.", km: "ការត្រួតពិនិត្យ – ជំនួសការជាប់គុក។" }, { en: "Parole", def: "Being released from jail early with conditions.", km: "ការដោះលែងមានលក្ខខណ្ឌ – ត្រូវបានដោះលែងមានលក្ខខណ្ឌ។" }] },
+                    { en: "Have you EVER been married to more than one person at the same time?", km: "តើអ្នកធ្លាប់រៀបការជាមួយមនុស្សច្រើនជាងម្នាក់ ក្នុងពេលតែមួយដែរឬទេ?", terms: [] },
+                    { en: "Have you EVER helped anyone to enter, or try to enter, the United States illegally?", km: "តើអ្នកធ្លាប់ជួយនណាម្នាក់ឱ្យចូលសហរដ្ឋអាមេរិកដោយខុសច្បាប់ដែរឬទេ?", terms: [] },
+                    { en: "Have you EVER been placed in removal, rescission, or deportation proceedings?", km: "តើអ្នកធ្លាប់ត្រូវបានដាក់ក្នុងដំណើរការបណ្តេញចេញដែរឬទេ?", terms: [{ en: "Deportation proceedings", def: "The legal process to remove someone from the US.", km: "ដំណើរការបណ្តេញចេញ – ដំណើរការច្បាប់ដើម្បីដកមនុស្សចេញ។" }] }
+                ]
+            },
+            {
+                part: "Part 13", title: "Selective Service and Military History",
+                titleKm: "ផ្នែកទី ១៣៖ ការចុះឈ្មោះកងទ័ព",
+                questions: [
+                    { en: "Are you a male who lived in the United States at any time between your 18th and 26th birthdays?", km: "តើអ្នកជាបុរសដែលរស់នៅក្នុងអាមេរិករវាងអាយុ ១៨ និង ២៦ ឆ្នាំដែរឬទេ?", terms: [{ en: "Selective Service", def: "A system requiring males to register for possible military service.", km: "ការចុះឈ្មោះកងទ័ព – ប្រព័ន្ធដែលតម្រូវឱ្យបុរសចុះឈ្មោះ។" }] },
+                    { en: "Have you EVER left the United States to avoid being drafted in the U.S. armed forces?", km: "តើអ្នកធ្លាប់ចាកចេញពីអាមេរិកដើម្បីគេចការចុលកងទ័ពដែរឬទេ?", terms: [{ en: "Drafted", def: "Required by law to join the military.", km: "បង្ខំឱ្យចូលកងទ័ព – តម្រូវដោយច្បាប់ឱ្យចូលកងទ័ព។" }] },
+                    { en: "Have you EVER served in the U.S. armed forces?", km: "តើអ្នកធ្លាប់បម្រើក្នុងកងទ័ពអាមេរិកដែរឬទេ?", terms: [] },
+                    { en: "Have you EVER been court-martialed or received a discharge other than honorable while in the U.S. armed forces?", km: "តើអ្នកធ្លាប់ត្រូវបានកាត់ទោសដោយតុលាការយោធាដែរឬទេ?", terms: [{ en: "Court-martialed", def: "Tried in a military court.", km: "កាត់ទោសដោយតុលាការយោធា – ត្រូវបានកាត់ទោសនៅតុលាការកងទ័ព។" }] },
+                    { en: "Have you EVER deserted from the U.S. armed forces?", km: "តើអ្នកធ្លាប់រត់ចេញពីកងទ័ពអាមេរិកដែរឬទេ?", terms: [{ en: "Desert", def: "To leave the military without permission.", km: "រត់ចេញ – ចាកចេញពីកងទ័ពដោយគ្មានការអនុញ្ញាត។" }] }
+                ]
+            },
+            {
+                part: "Part 14", title: "Nobility and Oath Eligibility",
+                titleKm: "ផ្នែកទី ១៤៖ តំណែងអភិជន និងសិទ្ធិស្បថ",
+                questions: [
+                    { en: "Do you now have, or did you EVER have, a hereditary title or an order of nobility in any foreign country?", km: "តើអ្នកមាន ឬធ្លាប់មាន តំណែងសេចក្តី នៅប្រទេសបរទេសដែរឬទេ?", terms: [{ en: "Hereditary title", def: "A title like prince passed down in a family.", km: "តំណែងសេចក្តី – តំណែងដូចជាអ្នកក្រួមមនុស្ស។" }, { en: "Nobility", def: "A class of people with special social status.", km: "អភិជន – ក្រួមមនុស្សដែលមានតំណែងពិសេស។" }] },
+                    { en: "Are you unable to take the Oath of Allegiance because of a physical or developmental disability or mental impairment?", km: "តើអ្នកមិនអាចស្បថស្មោះត្រង់បាន ព្រោះតែពិការភាពដែរឬទេ?", terms: [{ en: "Disability", def: "A condition that limits a person\'s ability.", km: "ពិការភាព – ស្ថានភាពដែលកំណត់សមត្ថភាពរបស់មនុស្ស។" }] },
+                    { en: "Are you willing to take the full Oath of Allegiance to the United States?", km: "តើអ្នកយល់ព្រមស្បថស្មោះត្រង់ទាំងស្រុងចំពោះសហរដ្ឋអាមេរិកដែរឬទេ?", terms: [{ en: "Oath of Allegiance", def: "A promise to be loyal to the United States.", km: "ពាក្យស្បថ – ការប្តេជ្ញាដើម្បីស្មោះត្រង់ចំពោះសហរដ្ឋអាមេរិក។" }] }
+                ]
+            }
+        ];
+
+        const speakerSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>`;
+
+        let currentBtn = null;
+        let isSpeaking = false;
+
+        let bestVoice = null;
+        function loadBestVoice() {
+            const voices = speechSynthesis.getVoices();
+            const priorities = [
+                v => v.name.includes('Google US English'),
+                v => v.name.includes('Google') && v.lang.startsWith('en'),
+                v => v.name.includes('Natural') && v.lang.startsWith('en'),
+                v => v.name.includes('Samantha'),
+                v => v.name.includes('Microsoft') && v.lang.startsWith('en'),
+                v => v.lang.startsWith('en-US'),
+                v => v.lang.startsWith('en')
+            ];
+            for (const test of priorities) {
+                const found = voices.find(test);
+                if (found) { bestVoice = found; return; }
+            }
+        }
+        speechSynthesis.onvoiceschanged = loadBestVoice;
+        loadBestVoice();
+
+        function speak(text, btn) {
+            if (isSpeaking) {
+                if (typeof responsiveVoice !== 'undefined') responsiveVoice.cancel();
+                speechSynthesis.cancel();
+                if (currentBtn) currentBtn.classList.remove('speaking');
+                if (currentBtn === btn) { currentBtn = null; isSpeaking = false; return; }
+            }
+            btn.classList.add('speaking');
+            currentBtn = btn;
+            isSpeaking = true;
+            const onDone = () => { btn.classList.remove('speaking'); currentBtn = null; isSpeaking = false; };
+            if (typeof responsiveVoice !== 'undefined' && responsiveVoice.voiceSupport()) {
+                responsiveVoice.speak(text, 'US English Female', { pitch: 1, rate: 0.9, onend: onDone, onerror: () => speakWithBrowser(text, btn, onDone) });
+            } else {
+                speakWithBrowser(text, btn, onDone);
+            }
+        }
+
+        function speakWithBrowser(text, btn, onDone) {
+            const u = new SpeechSynthesisUtterance(text);
+            u.lang = 'en-US'; u.rate = 0.9; u.pitch = 1;
+            if (bestVoice) u.voice = bestVoice;
+            u.onend = onDone; u.onerror = onDone;
+            speechSynthesis.speak(u);
+        }
+
+        function render() {
+            const main = document.getElementById('content');
+            let html = '';
+            DATA.forEach(part => {
+                html += `<section class="part">
+      <div class="part-header">
+        <span class="part-number">${part.part}</span>
+        <span class="part-title">${part.title} <span class="part-title-km">${part.titleKm}</span></span>
+      </div>`;
+                part.questions.forEach((q, qi) => {
+                    const btnId = `tts-${part.part.replace(/\s/g, '')}-${qi}`;
+                    html += `<div class="question-card">
+        <div class="q-label q-label-en">Question (English)</div>
+        <div class="q-row">
+          <div class="q-text">"${q.en}"</div>
+          <button class="tts-btn" id="${btnId}" onclick="speak(\`${q.en.replace(/`/g, "'")}\`, this)" title="Listen" aria-label="Read question aloud">${speakerSVG}</button>
+        </div>
+        <div class="q-divider"></div>
+        <div class="q-label q-label-km">\u179f\u17c6\u178e\u17bd\u179a (Khmer)</div>
+        <div class="q-text-km">"${q.km}"</div>`;
+                    if (q.terms && q.terms.length) {
+                        html += `<div class="terms-block">`;
+                        q.terms.forEach(t => {
+                            html += `<div class="term-item">
+            <div class="term-en"><strong>${t.en}</strong> \u2013 ${t.def}</div>
+            <div class="term-km">${t.km}</div>
+          </div>`;
+                        });
+                        html += `</div>`;
+                    }
+                    html += `</div>`;
+                });
+                html += `</section>`;
+            });
+            main.innerHTML = html;
+        }
+        render();
+    </script>
+</body>
+
+</html>
