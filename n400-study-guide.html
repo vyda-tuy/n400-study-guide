@@ -6,10 +6,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>N-400 Study Guide — Questions &amp; Answers</title>
     <meta name="description" content="N-400 US Citizenship Interview Study Guide with English and Khmer translations">
+    <meta name="robots" content="noindex, nofollow">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=FREE" async
         onerror="console.log('ResponsiveVoice unavailable, using browser TTS')"></script>
     <style>
+        /* Password Gate */
+        #password-gate {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            font-family: 'Inter', sans-serif;
+        }
+
+        #password-gate.hidden {
+            display: none;
+        }
+
+        .gate-box {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 48px 40px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .gate-box .gate-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .gate-box h2 {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .gate-box p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-bottom: 28px;
+        }
+
+        .gate-input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.06);
+            color: #fff;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border-color 0.3s;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        .gate-input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+            letter-spacing: 0;
+        }
+
+        .gate-input:focus {
+            border-color: #4f8cff;
+        }
+
+        .gate-btn {
+            width: 100%;
+            padding: 14px;
+            margin-top: 16px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #4f8cff, #6c63ff);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.3s;
+        }
+
+        .gate-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(79, 140, 255, 0.4);
+        }
+
+        .gate-btn:active {
+            transform: translateY(0);
+        }
+
+        .gate-error {
+            color: #ff6b6b;
+            font-size: 0.85rem;
+            margin-top: 12px;
+            min-height: 20px;
+        }
+
+        .app-content.locked {
+            display: none !important;
+        }
+
         *,
         *::before,
         *::after {
@@ -290,7 +396,19 @@
 </head>
 
 <body>
-    <div class="container">
+    <!-- Password Gate -->
+    <div id="password-gate">
+        <div class="gate-box">
+            <div class="gate-icon">🔒</div>
+            <h2>Protected Content</h2>
+            <p>Enter the access code to view this study guide</p>
+            <input type="password" class="gate-input" id="gate-password" placeholder="Enter password" autofocus>
+            <button class="gate-btn" id="gate-submit">Unlock</button>
+            <div class="gate-error" id="gate-error"></div>
+        </div>
+    </div>
+
+    <div class="container app-content locked">
         <header>
             <h1>N-400 Citizenship Interview</h1>
             <p>Study Guide — English &amp; Khmer (ខ្មែរ)</p>
@@ -720,7 +838,41 @@
             });
             main.innerHTML = html;
         }
-        render();
+        // Password gate logic
+        const PASS_HASH = '27f60f15ac894bfce2d7cd5eee4a16bc8bbda4bf13c7b081160ce34c73271cec';
+
+        async function hashPassword(pw) {
+            const data = new TextEncoder().encode(pw);
+            const buf = await crypto.subtle.digest('SHA-256', data);
+            return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        async function checkPassword() {
+            const input = document.getElementById('gate-password').value;
+            const hash = await hashPassword(input);
+            if (hash === PASS_HASH) {
+                sessionStorage.setItem('n400_auth', 'true');
+                document.getElementById('password-gate').classList.add('hidden');
+                document.querySelector('.app-content').classList.remove('locked');
+                render();
+            } else {
+                document.getElementById('gate-error').textContent = 'Incorrect password. Please try again.';
+                document.getElementById('gate-password').value = '';
+                document.getElementById('gate-password').focus();
+            }
+        }
+
+        document.getElementById('gate-submit').addEventListener('click', checkPassword);
+        document.getElementById('gate-password').addEventListener('keydown', e => {
+            if (e.key === 'Enter') checkPassword();
+        });
+
+        // Auto-unlock if already authenticated this session
+        if (sessionStorage.getItem('n400_auth') === 'true') {
+            document.getElementById('password-gate').classList.add('hidden');
+            document.querySelector('.app-content').classList.remove('locked');
+            render();
+        }
     </script>
 </body>
 
